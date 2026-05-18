@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html class="light" lang="nl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed": "#ffdcc3",
+                    "error": "#ba1a1a",
+                    "outline-variant": "#dbc2b0",
+                    "on-surface-variant": "#554336",
+                    "on-tertiary-fixed-variant": "#633f00",
+                    "amber-vivid": "#FFAF2E",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed-variant": "#6e3900",
+                    "tertiary-fixed": "#ffddb4",
+                    "inverse-on-surface": "#f3f0ef",
+                    "on-tertiary-container": "#fffbff",
+                    "tertiary-fixed-dim": "#ffb954",
+                    "primary": "#8d4b00",
+                    "primary-container": "#b15f00",
+                    "on-surface": "#1b1c1c",
+                    "inverse-primary": "#ffb77d",
+                    "tertiary": "#7f5200",
+                    "surface-container-low": "#f6f3f2",
+                    "stone-medium": "#C8C1B9",
+                    "on-tertiary-fixed": "#291800",
+                    "on-background": "#1b1c1c",
+                    "primary-fixed-dim": "#ffb77d",
+                    "amber-burnt": "#D97706",
+                    "surface-container": "#f0eded",
+                    "secondary-fixed": "#e9e1d9",
+                    "error-container": "#ffdad6",
+                    "background": "#fcf9f8",
+                    "on-error-container": "#93000a",
+                    "inverse-surface": "#303030",
+                    "on-error": "#ffffff",
+                    "on-primary-container": "#fffbff",
+                    "secondary-container": "#e6ded6",
+                    "on-primary-fixed": "#2f1500",
+                    "secondary-fixed-dim": "#ccc5bd",
+                    "surface-container-highest": "#e4e2e1",
+                    "surface-variant": "#e4e2e1",
+                    "on-secondary-fixed-variant": "#4a4640",
+                    "on-secondary-container": "#67625b",
+                    "surface-tint": "#904d00",
+                    "surface-container-high": "#eae7e7",
+                    "surface-bright": "#fcf9f8",
+                    "on-primary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "outline": "#887364",
+                    "slate-deep": "#242424",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-fixed": "#1e1b16",
+                    "secondary": "#625e57",
+                    "surface-dim": "#dcd9d9",
+                    "surface": "#fcf9f8",
+                    "stone-light": "#F5F4F2",
+                    "tertiary-container": "#a06900"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "container-max-width": "1440px",
+                    "margin-mobile": "16px",
+                    "margin-desktop": "32px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "label-md": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #fcf9f8;
+            color: #1b1c1c;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen flex flex-col md:flex-row overflow-x-hidden">
+<!-- Left Column: Branding & Visual (Visible on Desktop) -->
+<section class="hidden md:flex md:w-1/2 bg-slate-deep relative overflow-hidden flex-col justify-between p-12">
+<div class="z-10">
+<h1 class="font-headline-lg text-headline-lg text-amber-vivid mb-4">PVC Flow CRM</h1>
+<p class="font-body-lg text-body-lg text-surface-variant max-w-md">
+                De alles-in-één oplossing voor projectmanagement in de bouw- en vastgoedsector. Beheer uw relaties, projecten en verkoopkansen met precisie.
+            </p>
+</div>
+<!-- Abstract Background Image -->
+<div class="absolute inset-0 opacity-40">
+<img alt="Architectural Construction" class="w-full h-full object-cover" data-alt="A professional, high-angle wide shot of a modern construction site with architectural plans and safety gear in the foreground. The lighting is crisp, morning sunlight that highlights the textures of concrete and steel, creating an authoritative and dependable corporate atmosphere. The scene uses a grounded color palette of warm greys and deep slates with golden hour amber highlights, emphasizing structural clarity and premium project management quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBssG6-HMbLaW3g1Za9b5mxEbl__Rp_2m5TU0geUSd6e9LYLk5rFWKIL8g6EpZJY2Luk2ZuTa0bA_JnZwasLPR8Ta6n5Jhw0LNAIz7GblurIon3Zau8eFwII4ppVLEP6v-yVIU8o7RoDFAbIO82KclFrMyhhc6K9TPj3KFf37BK1Wj4ulKEFPfFFhTeozfwKpZ2VEh2upIj86CmJec6UBQXc_l30EoFxfb-QQ9yEW8xngqWhvFc167-d81Zlz-NruEutCE7YxBV9i8"/>
+</div>
+<div class="z-10 flex gap-8">
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md text-white">500+</span>
+<span class="font-label-md text-label-md text-stone-medium">PROJECTEN</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md text-white">100%</span>
+<span class="font-label-md text-label-md text-stone-medium">PRECISIE</span>
+</div>
+</div>
+</section>
+<!-- Right Column: Registration Form -->
+<main class="flex-1 flex flex-col items-center justify-center p-margin-mobile md:p-margin-desktop bg-surface">
+<div class="w-full max-w-md space-y-8">
+<!-- Header Section -->
+<div class="text-center md:text-left">
+<div class="md:hidden mb-6">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-amber-burnt">PVC Flow CRM</h1>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Account aanmaken</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Begin vandaag nog met het optimaliseren van uw workflow.</p>
+</div>
+<!-- Registration Form -->
+<form class="space-y-5">
+<!-- Full Name Field -->
+<div class="space-y-2">
+<label class="block font-label-md text-label-md text-on-surface-variant" for="full_name">Volledige Naam</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">person</span>
+<input class="w-full pl-10 pr-4 py-3 bg-stone-light border border-stone-medium rounded-xl focus:ring-2 focus:ring-amber-burnt focus:border-amber-burnt outline-none transition-all font-body-md text-body-md" id="full_name" name="full_name" placeholder="Jan de Vries" type="text"/>
+</div>
+</div>
+<!-- Company Name Field -->
+<div class="space-y-2">
+<label class="block font-label-md text-label-md text-on-surface-variant" for="company">Bedrijfsnaam</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">domain</span>
+<input class="w-full pl-10 pr-4 py-3 bg-stone-light border border-stone-medium rounded-xl focus:ring-2 focus:ring-amber-burnt focus:border-amber-burnt outline-none transition-all font-body-md text-body-md" id="company" name="company" placeholder="Vastgoed B.V." type="text"/>
+</div>
+</div>
+<!-- Email Field -->
+<div class="space-y-2">
+<label class="block font-label-md text-label-md text-on-surface-variant" for="email">E-mail</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">mail</span>
+<input class="w-full pl-10 pr-4 py-3 bg-stone-light border border-stone-medium rounded-xl focus:ring-2 focus:ring-amber-burnt focus:border-amber-burnt outline-none transition-all font-body-md text-body-md" id="email" name="email" placeholder="naam@bedrijf.nl" type="email"/>
+</div>
+</div>
+<!-- Password Field -->
+<div class="space-y-2">
+<label class="block font-label-md text-label-md text-on-surface-variant" for="password">Wachtwoord</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">lock</span>
+<input class="w-full pl-10 pr-4 py-3 bg-stone-light border border-stone-medium rounded-xl focus:ring-2 focus:ring-amber-burnt focus:border-amber-burnt outline-none transition-all font-body-md text-body-md" id="password" name="password" placeholder="••••••••" type="password"/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline cursor-pointer hover:text-on-surface">visibility</span>
+</div>
+<p class="font-label-md text-[10px] text-on-secondary-container mt-1">Minimaal 8 tekens, inclusief een getal en speciaal teken.</p>
+</div>
+<!-- Terms and Conditions Checkbox -->
+<div class="flex items-start gap-3 py-2">
+<div class="flex items-center h-5">
+<input class="h-5 w-5 rounded border-stone-medium text-amber-burnt focus:ring-amber-burnt cursor-pointer" id="terms" name="terms" type="checkbox"/>
+</div>
+<div class="text-sm">
+<label class="font-body-sm text-body-sm text-on-surface-variant" for="terms">
+                            Ik ga akkoord met de <a class="text-amber-burnt font-bold hover:underline" href="#">Algemene Voorwaarden</a> en het <a class="text-amber-burnt font-bold hover:underline" href="#">Privacybeleid</a>.
+                        </label>
+</div>
+</div>
+<!-- Submit Button -->
+<button class="w-full py-4 bg-amber-burnt hover:bg-primary-container text-white font-label-md text-label-md rounded-xl transition-all active:scale-95 flex items-center justify-center gap-2" type="submit">
+                    Account aanmaken
+                    <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</form>
+<!-- Login Link -->
+<div class="pt-6 border-t border-stone-medium text-center">
+<p class="font-body-md text-body-md text-on-surface-variant">
+                    Heeft u al een account? 
+                    <a class="text-amber-burnt font-bold hover:underline ml-1" href="/inloggen/">Inloggen</a>
+</p>
+</div>
+</div>
+<!-- Footer Info -->
+<footer class="mt-auto pt-12">
+<p class="font-label-md text-label-md text-outline">
+                © 2024 Per-M2.nl | Alle rechten voorbehouden.
+            </p>
+</footer>
+</main>
+</body></html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<html class="light" lang="nl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Inloggen - Per-M2.nl CRM</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#ffdcc3",
+                        "error": "#ba1a1a",
+                        "outline-variant": "#dbc2b0",
+                        "on-surface-variant": "#554336",
+                        "on-tertiary-fixed-variant": "#633f00",
+                        "amber-vivid": "#FFAF2E",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#6e3900",
+                        "tertiary-fixed": "#ffddb4",
+                        "inverse-on-surface": "#f3f0ef",
+                        "on-tertiary-container": "#fffbff",
+                        "tertiary-fixed-dim": "#ffb954",
+                        "primary": "#8d4b00",
+                        "primary-container": "#b15f00",
+                        "on-surface": "#1b1c1c",
+                        "inverse-primary": "#ffb77d",
+                        "tertiary": "#7f5200",
+                        "surface-container-low": "#f6f3f2",
+                        "stone-medium": "#C8C1B9",
+                        "on-tertiary-fixed": "#291800",
+                        "on-background": "#1b1c1c",
+                        "primary-fixed-dim": "#ffb77d",
+                        "amber-burnt": "#D97706",
+                        "surface-container": "#f0eded",
+                        "secondary-fixed": "#e9e1d9",
+                        "error-container": "#ffdad6",
+                        "background": "#fcf9f8",
+                        "on-error-container": "#93000a",
+                        "inverse-surface": "#303030",
+                        "on-error": "#ffffff",
+                        "on-primary-container": "#fffbff",
+                        "secondary-container": "#e6ded6",
+                        "on-primary-fixed": "#2f1500",
+                        "secondary-fixed-dim": "#ccc5bd",
+                        "surface-container-highest": "#e4e2e1",
+                        "surface-variant": "#e4e2e1",
+                        "on-secondary-fixed-variant": "#4a4640",
+                        "on-secondary-container": "#67625b",
+                        "surface-tint": "#904d00",
+                        "surface-container-high": "#eae7e7",
+                        "surface-bright": "#fcf9f8",
+                        "on-primary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#887364",
+                        "slate-deep": "#242424",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed": "#1e1b16",
+                        "secondary": "#625e57",
+                        "surface-dim": "#dcd9d9",
+                        "surface": "#fcf9f8",
+                        "stone-light": "#F5F4F2",
+                        "tertiary-container": "#a06900"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "container-max-width": "1440px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "32px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md text-body-md min-h-screen flex flex-col md:flex-row">
+<!-- Left Side: Visual/Branding (Desktop Only) -->
+<div class="hidden md:flex md:w-1/2 relative overflow-hidden bg-slate-deep">
+<div class="absolute inset-0 z-0 opacity-40">
+<img class="w-full h-full object-cover" data-alt="A cinematic low-angle photograph of a modern glass and steel skyscraper reaching into a clear blue sky. The architecture is sharp and dependable, reflecting a professional real estate environment. The lighting is crisp, highlighting the textures of the stone and metal components. The overall mood is authoritative and structured, perfectly aligned with the high-performance CRM aesthetic of the brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlr6yM1WwdGb_bWs1XO5JdPKU5Ma8vx5_M664pbxJEjCEnUHbEUE72lvGQe7rr5vcpMBlW8p4ZgffvmVwyLzBGAWfTZXu_L9S3IuZ3TmfXJpn-ctRHlb-PLzT4Sd-vjBVD6f3h19pyXSRw9RskHYgUyE7iElN5JlqAq94Giyez5bH5XDUqvGCRyF8TJQlblWnXSZMzQEEoaMmBNTG3gZZ4HQT0SgcxbPUc7TE1r6o6pvf9d5qz3wPRa5d4RXfYDLPLM_xojfAiMyk"/>
+</div>
+<div class="relative z-10 flex flex-col justify-between p-margin-desktop w-full">
+<div class="flex items-center gap-3">
+<div class="bg-amber-burnt p-2 rounded-lg">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">architecture</span>
+</div>
+<span class="text-white font-headline-md text-headline-md font-bold tracking-tight">Per-M2.nl</span>
+</div>
+<div>
+<h1 class="text-white font-display-lg text-display-lg leading-tight mb-4">Beheer uw vastgoed met precisie.</h1>
+<p class="text-secondary-fixed font-body-lg text-body-lg max-w-lg">
+                    Het meest complete CRM-platform voor de bouw- en vastgoedsector. Gestructureerd, krachtig en gebouwd voor professionals.
+                </p>
+</div>
+<div class="flex items-center gap-4 text-secondary-fixed">
+<span class="font-label-md text-label-md">© 2024 PVC Flow CRM Systemen</span>
+</div>
+</div>
+</div>
+<!-- Right Side: Login Form -->
+<div class="flex-1 flex flex-col items-center justify-center p-margin-mobile md:p-margin-desktop bg-surface">
+<!-- Mobile Logo -->
+<div class="md:hidden flex flex-col items-center mb-12">
+<div class="bg-amber-burnt p-3 rounded-xl mb-4">
+<span class="material-symbols-outlined text-white text-4xl" style="font-variation-settings: 'FILL' 1;">architecture</span>
+</div>
+<span class="text-on-surface font-headline-md text-headline-md font-black">PVC Flow CRM</span>
+</div>
+<div class="w-full max-w-[440px]">
+<header class="mb-10 text-center md:text-left">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-2">Welkom terug</h2>
+<p class="text-on-secondary-container font-body-md text-body-md">Voer uw gegevens in om toegang te krijgen tot uw projecten.</p>
+</header>
+<form class="space-y-6">
+<!-- Email Field -->
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant block" for="email">E-MAILADRES</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant">mail</span>
+<input class="w-full pl-12 pr-4 py-4 bg-stone-light border border-stone-medium rounded-xl focus:ring-2 focus:ring-amber-burnt focus:border-amber-burnt transition-all outline-none placeholder:text-on-secondary-container/50" id="email" placeholder="naam@bedrijf.nl" type="email"/>
+</div>
+</div>
+<!-- Password Field -->
+<div class="space-y-2">
+<div class="flex justify-between items-center">
+<label class="font-label-md text-label-md text-on-surface-variant block" for="password">WACHTWOORD</label>
+<a class="text-amber-burnt font-label-md text-label-md hover:underline transition-all" href="#">Wachtwoord vergeten?</a>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant">lock</span>
+<input class="w-full pl-12 pr-4 py-4 bg-stone-light border border-stone-medium rounded-xl focus:ring-2 focus:ring-amber-burnt focus:border-amber-burnt transition-all outline-none placeholder:text-on-secondary-container/50" id="password" placeholder="••••••••" type="password"/>
+<button class="absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant" type="button">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+</div>
+</div>
+<!-- Remember Me -->
+<div class="flex items-center gap-3">
+<input class="w-5 h-5 rounded border-stone-medium text-amber-burnt focus:ring-amber-burnt" id="remember" type="checkbox"/>
+<label class="font-body-sm text-body-sm text-on-secondary-container select-none" for="remember">Onthoud mijn inloggegevens</label>
+</div>
+<!-- Submit Button -->
+<button class="w-full bg-amber-burnt hover:bg-primary-container text-white font-headline-md text-headline-md py-4 rounded-xl shadow-lg shadow-amber-burnt/10 active:scale-[0.98] transition-all flex items-center justify-center gap-2" type="submit">
+                    Inloggen
+                    <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</form>
+<!-- SSO Options -->
+<div class="mt-10">
+<div class="relative mb-8">
+<div class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-stone-medium"></div>
+</div>
+<div class="relative flex justify-center text-sm">
+<span class="px-4 bg-surface text-on-secondary-container font-label-md text-label-md">OF GA VERDER MET</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<button class="flex items-center justify-center gap-3 py-3 px-4 border border-stone-medium rounded-xl bg-white hover:bg-stone-light transition-colors">
+<img alt="Google Logo" class="w-5 h-5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEXc3hJj9q8lWAgNQyYpOydJpnLQlSoRZsoedri2d_LYq_lMknMiAN0iIKhJ7nrg6Y4EEpUCKdBBgpnZ2bm8DeSDjpJAVA0zVz1wYtFy2lXdigPZV09ah3tm0bBu3qxVyQmtSOJ3V43xxjwLRw5HF6AIvGmFnGgo03DMTfEg7UKjR_zM8eiSUYapGHBPPZdEFI_4XJywYhpC3zCYGc31Tl5VwxWWWmUHZXwP7ncQZps4ptdWiD76oAgyEVB-vSpG4p2dkOoFi8p6Q"/>
+<span class="font-label-md text-label-md text-on-surface">Google</span>
+</button>
+<button class="flex items-center justify-center gap-3 py-3 px-4 border border-stone-medium rounded-xl bg-white hover:bg-stone-light transition-colors">
+<span class="material-symbols-outlined text-on-surface">hub</span>
+<span class="font-label-md text-label-md text-on-surface">Microsoft</span>
+</button>
+</div>
+</div>
+<!-- Footer Link -->
+<footer class="mt-12 text-center">
+<p class="text-on-secondary-container font-body-sm text-body-sm">
+                    Nog geen account voor uw organisatie? 
+                    <a class="text-amber-burnt font-bold hover:underline ml-1" href="/registreren/">Account aanmaken</a>
+</p>
+</footer>
+</div>
+</div>
+</body></html>

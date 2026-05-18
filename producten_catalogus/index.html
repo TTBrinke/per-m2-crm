@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+
+<html class="light" lang="nl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fcf9f8;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "amber-vivid": "#FFAF2E",
+                        "tertiary": "#7f5200",
+                        "background": "#fcf9f8",
+                        "surface-container-highest": "#e4e2e1",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#2f1500",
+                        "surface-container-low": "#f6f3f2",
+                        "on-secondary-fixed": "#1e1b16",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "inverse-on-surface": "#f3f0ef",
+                        "on-primary-fixed-variant": "#6e3900",
+                        "surface-bright": "#fcf9f8",
+                        "tertiary-fixed-dim": "#ffb954",
+                        "on-tertiary-fixed-variant": "#633f00",
+                        "error-container": "#ffdad6",
+                        "surface-container": "#f0eded",
+                        "secondary": "#625e57",
+                        "on-primary": "#ffffff",
+                        "surface": "#fcf9f8",
+                        "on-primary-container": "#fffbff",
+                        "on-surface-variant": "#554336",
+                        "on-secondary-container": "#67625b",
+                        "on-secondary-fixed-variant": "#4a4640",
+                        "secondary-container": "#e6ded6",
+                        "slate-deep": "#242424",
+                        "outline": "#887364",
+                        "stone-medium": "#C8C1B9",
+                        "primary": "#8d4b00",
+                        "on-background": "#1b1c1c",
+                        "surface-variant": "#e4e2e1",
+                        "primary-fixed": "#ffdcc3",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed": "#291800",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "outline-variant": "#dbc2b0",
+                        "amber-burnt": "#D97706",
+                        "primary-container": "#b15f00",
+                        "secondary-fixed-dim": "#ccc5bd",
+                        "tertiary-fixed": "#ffddb4",
+                        "on-tertiary-container": "#fffbff",
+                        "on-surface": "#1b1c1c",
+                        "surface-dim": "#dcd9d9",
+                        "inverse-surface": "#303030"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "margin-desktop": "32px",
+                        "base": "8px",
+                        "margin-mobile": "16px",
+                        "container-max-width": "1440px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface">
+<!-- Sidebar Navigation Shell -->
+<aside class="fixed left-0 top-0 h-full z-50 flex flex-col py-8 bg-surface-container border-r border-stone-medium w-72 hidden md:flex">
+<div class="px-8 mb-10">
+<h1 class="font-headline-md text-headline-md font-black text-amber-burnt">PVC Flow CRM</h1>
+</div>
+<nav class="flex-1 px-4 space-y-2">
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-on-secondary-container hover:bg-secondary-container transition-all" href="/dashboard/">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-on-secondary-container hover:bg-secondary-container transition-all" href="/relaties/">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+<span class="font-label-md text-label-md">Relaties</span>
+</a>
+<!-- Active Navigation: Producten -->
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-amber-burnt border-r-4 border-amber-burnt bg-primary-fixed translate-x-1 duration-200" href="/producten_catalogus/">
+<span class="material-symbols-outlined" data-icon="inventory_2" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+<span class="font-label-md text-label-md">Producten</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-on-secondary-container hover:bg-secondary-container transition-all" href="/verkoopkansen/">
+<span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
+<span class="font-label-md text-label-md">Verkoopkansen</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-on-secondary-container hover:bg-secondary-container transition-all" href="/projecten/">
+<span class="material-symbols-outlined" data-icon="architecture">architecture</span>
+<span class="font-label-md text-label-md">Projecten</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-on-secondary-container hover:bg-secondary-container transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="checklist">checklist</span>
+<span class="font-label-md text-label-md">Takenlijst</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-on-secondary-container hover:bg-secondary-container transition-all" href="/facturen_overzicht/">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span class="font-label-md text-label-md">Facturen</span>
+</a>
+</nav>
+</aside>
+<!-- Main Content Area -->
+<main class="md:ml-72 min-h-screen pb-24 md:pb-8">
+<!-- Top App Bar -->
+<header class="sticky top-0 z-40 bg-surface border-b border-stone-medium">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max-width mx-auto">
+<div class="flex items-center gap-4">
+<button class="md:hidden p-2 hover:bg-surface-container-high rounded-full">
+<span class="material-symbols-outlined text-amber-burnt" data-icon="menu">menu</span>
+</button>
+<h2 class="text-headline-md font-headline-md font-bold text-on-surface">Producten</h2>
+</div>
+<button class="flex items-center gap-2 bg-amber-burnt hover:bg-[#B45309] text-white px-6 py-2.5 rounded-xl font-label-md text-label-md transition-colors active:scale-95 duration-100">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                    Product toevoegen
+                </button>
+</div>
+</header>
+<!-- Content Canvas -->
+<div class="max-w-container-max-width mx-auto px-margin-mobile md:px-margin-desktop py-8 space-y-8">
+<!-- Bento Stats Grid -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="bg-surface border border-stone-medium p-6 rounded-xl space-y-2">
+<p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Totaal Producten</p>
+<p class="font-headline-lg text-headline-lg text-on-surface">142</p>
+</div>
+<div class="bg-surface border border-stone-medium p-6 rounded-xl space-y-2">
+<p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Actieve Diensten</p>
+<p class="font-headline-lg text-headline-lg text-on-surface">24</p>
+</div>
+<div class="bg-surface border border-stone-medium p-6 rounded-xl space-y-2">
+<p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Gemiddelde Marge</p>
+<p class="font-headline-lg text-headline-lg text-amber-burnt">32.4%</p>
+</div>
+<div class="bg-surface border border-stone-medium p-6 rounded-xl space-y-2">
+<p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Laatst Bijgewerkt</p>
+<p class="font-headline-lg text-headline-lg text-on-surface">Vandaag</p>
+</div>
+</div>
+<!-- Product Table Container -->
+<div class="bg-surface-container-lowest border border-stone-medium rounded-xl overflow-hidden shadow-sm">
+<div class="p-6 border-b border-stone-medium flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="relative max-w-md w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant" data-icon="search">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-stone-light border border-stone-medium rounded-lg focus:ring-2 focus:ring-amber-burnt focus:border-amber-burnt outline-none font-body-sm text-body-sm" placeholder="Zoek op naam, type of eenheid..." type="text"/>
+</div>
+<div class="flex gap-2">
+<button class="flex items-center gap-2 px-4 py-2 bg-stone-light border border-stone-medium rounded-lg font-label-md text-label-md hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="filter_list">filter_list</span>
+                            Filter
+                        </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-stone-light border border-stone-medium rounded-lg font-label-md text-label-md hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="download">download</span>
+                            Export
+                        </button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse">
+<thead>
+<tr class="bg-surface-container text-left border-b border-stone-medium sticky top-0">
+<th class="px-6 py-4 font-label-md text-label-md text-on-surface-variant">PRODUCTNAAM</th>
+<th class="px-6 py-4 font-label-md text-label-md text-on-surface-variant">TYPE</th>
+<th class="px-6 py-4 font-label-md text-label-md text-on-surface-variant">EENHEID</th>
+<th class="px-6 py-4 font-label-md text-label-md text-on-surface-variant text-right">INKOOPPRIJS</th>
+<th class="px-6 py-4 font-label-md text-label-md text-on-surface-variant text-right">MARGE (%)</th>
+<th class="px-6 py-4 font-label-md text-label-md text-on-surface-variant text-right">VERKOOPPRIJS</th>
+<th class="px-6 py-4 font-label-md text-label-md text-on-surface-variant"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-stone-medium">
+<!-- Row 1 -->
+<tr class="hover:bg-primary-fixed/30 transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg overflow-hidden bg-stone-light border border-stone-medium flex-shrink-0">
+<img alt="PVC Product" class="w-full h-full object-cover" data-alt="A detailed high-resolution close-up photo of luxury visgraat PVC flooring with a realistic oak wood grain texture. The lighting is warm and natural, coming from a large window off-camera, highlighting the tactile surface and the precise interlocking seams. The background is a minimalist, high-end interior setting with neutral stone walls and soft shadows, creating an authoritative and dependable professional aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0nxs-k6H_gjdjzZW-beVthlUnpJkm6f0LwTceRN_h1f5V6TYGSJXL9rLMjC9cKQFSRsxkBJ1KR272Lbs91ZNsU0uv22ZTM6tnZBKvTpiwAzxWzYsqUO9i6qNLktVCRtHd6XF1VRQW4iqhYNeE8_KXdwaTYkw3Fu8cT84KSxx3rKyHmlD3CAJbJ6P3BP-xQh5ph5dq2dzjMfjhZyShfPzXlR4xoqgNNaeIi4_2Q7SWSxgGLeDB9xViz3ZcYXqzhg4bNI0oKO988Iw"/>
+</div>
+<span class="font-body-md text-body-md text-on-surface font-semibold">Moduleo Roots PVC Visgraat</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-amber-burnt/10 text-amber-burnt rounded-full font-label-md text-label-md">Product</span>
+</td>
+<td class="px-6 py-4 font-body-sm text-body-sm text-on-surface-variant">m2</td>
+<td class="px-6 py-4 font-body-sm text-body-sm text-on-surface text-right">€ 32,50</td>
+<td class="px-6 py-4 font-body-sm text-body-sm text-amber-burnt text-right">45%</td>
+<td class="px-6 py-4 font-body-sm text-body-sm text-on-surface text-right font-bold">€ 47,12</td>
+<td class="px-6 py-4 text-right">
+<button class="p-2 hover:bg-surface-container rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="edit">edit</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-primary-fixed/30 transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg overflow-hidden bg-stone-light border border-stone-medium flex-shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="construction">construction</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface font-semibold">Legloon PVC Vakman</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full font-label-md text-label-md">Dienst</span>
+</td>
+<td class="px-6 py-4 font-body-sm text-body-sm text-on-surface-variant">uur</td>
+<td class="px-6 py-4 font-body-sm text-body-sm text-on-surface text-right">€ 45,00</td>
+<td class="px-6 py-4 font-body-sm text-body-sm text-amber-burnt text-right">20%</td>
+<td class="px-6 py-4 font-body-sm text-body-sm text-on-surface text-right font-bold">€ 54,00</td>
+<td class="px-6 py-4 text-right">
+<button class="p-2 hover:bg-surface-container rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="edit">edit</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-primary-fixed/30 transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg overflow-hidden bg-stone-light border border-stone-medium flex-shrink-0">
+<img alt="PVC Tile" class="w-full h-full object-cover" data-alt="A clean, flat-lay photograph of a grey commercial-grade PVC tile. The texture is matte and industrial, showing durability. The lighting is bright and even, casting soft shadows to reveal depth. This image is part of a high-performance CRM interface for the construction sector, maintaining a professional and structured visual language with a focus on functional clarity and dependable materials." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzMQDqoLy23QlKv0KF8rKt1UBy-XrQ7yLFXhy_0Dcn8XVErTUadLo9XPQP87JqcsxM49C4dsTwILoMltmt4ukSFQcQsdYYi3DDmeqZnUCTgCArbKgHR_hwDYPlH79IG0V7hP5Bf2fe7OTHZAAJxXXDt_NlwcMH2xNC02a6Egbl6mJ8DGOqI3LLYcoUlVzFtFuYQ7z4jlq1kBfgh74wQUDSMZIPtiwLyE0e4YR9bQqps10xEcKL48nvNFjuJK_t5ZxZSi3TlpVCqNY"/>
+</div>
+<span class="font-body-md text-body-md text-on-surface font-semibold">Therdex 7000 Series Betonlook</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-amber-burnt/10 text-amber-burnt rounded-full font-label-md text-label-md">Product</span>
+</td>
+<td class="px-6 py-4 font-body-sm text-body-sm text-on-surface-variant">m2</td>
+<td class="px-6 py-4 font-body-sm text-body-sm text-on-surface text-right">€ 28,95</td>
+<td class="px-6 py-4 font-body-sm text-body-sm text-amber-burnt text-right">38%</td>
+<td class="px-6 py-4 font-body-sm text-body-sm text-on-surface text-right font-bold">€ 39,95</td>
+<td class="px-6 py-4 text-right">
+<button class="p-2 hover:bg-surface-container rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="edit">edit</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-primary-fixed/30 transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg overflow-hidden bg-stone-light border border-stone-medium flex-shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="brush">brush</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface font-semibold">Egaliseren Ondervloer</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full font-label-md text-label-md">Dienst</span>
+</td>
+<td class="px-6 py-4 font-body-sm text-body-sm text-on-surface-variant">m2</td>
+<td class="px-6 py-4 font-body-sm text-body-sm text-on-surface text-right">€ 12,00</td>
+<td class="px-6 py-4 font-body-sm text-body-sm text-amber-burnt text-right">25%</td>
+<td class="px-6 py-4 font-body-sm text-body-sm text-on-surface text-right font-bold">€ 15,00</td>
+<td class="px-6 py-4 text-right">
+<button class="p-2 hover:bg-surface-container rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="edit">edit</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-6 bg-stone-light flex items-center justify-between border-t border-stone-medium">
+<p class="font-body-sm text-body-sm text-on-surface-variant">Toon 1 t/m 4 van 142 producten</p>
+<div class="flex gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-stone-medium hover:bg-surface transition-colors disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-amber-burnt text-white font-label-md text-label-md">1</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-stone-medium hover:bg-surface transition-colors font-label-md text-label-md">2</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-stone-medium hover:bg-surface transition-colors font-label-md text-label-md">3</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-stone-medium hover:bg-surface transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 right-0 bg-surface border-t border-stone-medium flex justify-around items-center py-2 md:hidden z-50">
+<a class="flex flex-col items-center gap-1 p-2 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-[10px] font-label-md">Dash</span>
+</a>
+<a class="flex flex-col items-center gap-1 p-2 text-on-surface-variant" href="/relaties/">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+<span class="text-[10px] font-label-md">Relaties</span>
+</a>
+<a class="flex flex-col items-center gap-1 p-2 text-amber-burnt" href="/producten_catalogus/">
+<span class="material-symbols-outlined" data-icon="inventory_2" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+<span class="text-[10px] font-label-md">Producten</span>
+</a>
+<a class="flex flex-col items-center gap-1 p-2 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined" data-icon="architecture">architecture</span>
+<span class="text-[10px] font-label-md">Provin</span>
+</a>
+<a class="flex flex-col items-center gap-1 p-2 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+<span class="text-[10px] font-label-md">Meer</span>
+</a>
+</nav>
+</body></html>

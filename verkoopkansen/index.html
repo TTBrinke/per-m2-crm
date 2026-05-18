@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+<html lang="nl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#e4e2e1",
+                        "secondary": "#625e57",
+                        "tertiary": "#7f5200",
+                        "outline": "#887364",
+                        "primary-fixed": "#ffdcc3",
+                        "primary": "#8d4b00",
+                        "amber-burnt": "#D97706",
+                        "secondary-container": "#e6ded6",
+                        "on-secondary": "#ffffff",
+                        "surface-container-low": "#f6f3f2",
+                        "surface": "#fcf9f8",
+                        "secondary-fixed-dim": "#ccc5bd",
+                        "tertiary-fixed": "#ffddb4",
+                        "surface-container-lowest": "#ffffff",
+                        "stone-medium": "#C8C1B9",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed": "#1e1b16",
+                        "amber-vivid": "#FFAF2E",
+                        "surface-tint": "#904d00",
+                        "error-container": "#ffdad6",
+                        "on-tertiary": "#ffffff",
+                        "stone-light": "#F5F4F2",
+                        "surface-container": "#f0eded",
+                        "error": "#ba1a1a",
+                        "on-tertiary-container": "#fffbff",
+                        "on-surface-variant": "#554336",
+                        "surface-container-highest": "#e4e2e1",
+                        "tertiary-fixed-dim": "#ffb954",
+                        "surface-container-high": "#eae7e7",
+                        "on-primary-fixed-variant": "#6e3900",
+                        "primary-fixed-dim": "#ffb77d",
+                        "on-surface": "#1b1c1c",
+                        "outline-variant": "#dbc2b0",
+                        "secondary-fixed": "#e9e1d9",
+                        "slate-deep": "#242424",
+                        "on-primary-container": "#fffbff",
+                        "on-secondary-container": "#67625b",
+                        "on-primary-fixed": "#2f1500",
+                        "background": "#fcf9f8",
+                        "surface-dim": "#dcd9d9",
+                        "on-tertiary-fixed": "#291800",
+                        "tertiary-container": "#a06900",
+                        "primary-container": "#b15f00",
+                        "inverse-primary": "#ffb77d",
+                        "surface-bright": "#fcf9f8",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed-variant": "#4a4640",
+                        "inverse-on-surface": "#f3f0ef",
+                        "on-background": "#1b1c1c",
+                        "inverse-surface": "#303030",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed-variant": "#633f00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "32px",
+                        "gutter": "24px",
+                        "container-max-width": "1440px",
+                        "margin-mobile": "16px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md selection:bg-amber-burnt selection:text-white">
+<!-- TopAppBar -->
+<header class="bg-surface sticky top-0 z-40 border-b border-stone-medium flex justify-between items-center w-full px-margin-mobile py-4 max-w-container-max-width mx-auto">
+<div class="flex items-center gap-4">
+<button class="text-amber-burnt hover:bg-surface-container transition-colors p-1 rounded-lg active:scale-95 duration-100">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="text-headline-md font-headline-md font-bold text-on-surface">Project Management</h1>
+</div>
+<button class="bg-amber-burnt text-white px-4 py-2 rounded-lg font-label-md text-label-md hover:bg-amber-burnt/90 transition-all active:scale-95 duration-100 shadow-sm">
+            Quick Add
+        </button>
+</header>
+<main class="min-h-screen pb-24">
+<!-- Dashboard Header / Title Section -->
+<section class="px-margin-mobile pt-8 pb-6">
+<div class="flex flex-col gap-1">
+<span class="text-amber-burnt font-label-md text-label-md uppercase tracking-wider">Overzicht</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile">Verkoopkansen</h2>
+</div>
+<!-- Quick Filter Chips -->
+<div class="flex gap-2 mt-6 overflow-x-auto pb-2 scrollbar-hide">
+<button class="bg-amber-burnt text-white px-4 py-1.5 rounded-full font-label-md text-label-md whitespace-nowrap">Alle (24)</button>
+<button class="bg-surface-container text-on-surface-variant px-4 py-1.5 rounded-full font-label-md text-label-md whitespace-nowrap border border-stone-medium/30">Nieuw</button>
+<button class="bg-surface-container text-on-surface-variant px-4 py-1.5 rounded-full font-label-md text-label-md whitespace-nowrap border border-stone-medium/30">Offerte</button>
+<button class="bg-surface-container text-on-surface-variant px-4 py-1.5 rounded-full font-label-md text-label-md whitespace-nowrap border border-stone-medium/30">Lopend</button>
+</div>
+</section>
+<!-- Search Bar -->
+<section class="px-margin-mobile mb-6">
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-4 text-secondary" data-icon="search">search</span>
+<input class="w-full pl-12 pr-4 py-3 bg-stone-light border border-stone-medium rounded-xl focus:ring-2 focus:ring-amber-burnt focus:border-amber-burnt transition-all outline-none font-body-md text-body-md" placeholder="Zoek op klant of project..." type="text"/>
+</div>
+</section>
+<!-- Sales Leads List (Bento-ish Cards) -->
+<div class="px-margin-mobile flex flex-col gap-4">
+<!-- Card 1: Lead Status -->
+<div class="bg-surface-container-lowest border border-stone-medium rounded-xl p-4 flex flex-col gap-4 hover:border-amber-burnt transition-all group">
+<div class="flex justify-between items-start">
+<div class="flex flex-col gap-1">
+<h3 class="font-headline-md text-headline-md text-on-surface">PVC Visgraat Woonkamer</h3>
+<p class="text-secondary font-body-sm text-body-sm">Klant: Fam. Van den Berg</p>
+</div>
+<span class="bg-amber-burnt/10 text-amber-burnt px-3 py-1 rounded-full font-label-md text-label-md border border-amber-burnt/20">Lead</span>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-stone-medium/20">
+<div class="flex flex-col">
+<span class="text-secondary font-label-md text-label-md">Waarde</span>
+<span class="font-headline-md text-headline-md text-on-surface">€ 4.250,00</span>
+</div>
+<button class="flex items-center gap-2 bg-stone-light text-on-surface-variant px-4 py-2 rounded-lg font-label-md text-label-md group-hover:bg-amber-burnt group-hover:text-white transition-all active:scale-95">
+<span class="material-symbols-outlined text-[18px]" data-icon="description">description</span>
+                        Bekijk Offerte
+                    </button>
+</div>
+</div>
+<!-- Card 2: Offerte Status -->
+<div class="bg-surface-container-lowest border border-stone-medium rounded-xl p-4 flex flex-col gap-4 hover:border-amber-burnt transition-all group">
+<div class="flex justify-between items-start">
+<div class="flex flex-col gap-1">
+<h3 class="font-headline-md text-headline-md text-on-surface">Modern Beton-look PVC</h3>
+<p class="text-secondary font-body-sm text-body-sm">Klant: Jan de Vries</p>
+</div>
+<span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full font-label-md text-label-md border border-blue-200">Offerte</span>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-stone-medium/20">
+<div class="flex flex-col">
+<span class="text-secondary font-label-md text-label-md">Waarde</span>
+<span class="font-headline-md text-headline-md text-on-surface">€ 2.890,00</span>
+</div>
+<button class="flex items-center gap-2 bg-stone-light text-on-surface-variant px-4 py-2 rounded-lg font-label-md text-label-md group-hover:bg-amber-burnt group-hover:text-white transition-all active:scale-95">
+<span class="material-symbols-outlined text-[18px]" data-icon="description">description</span>
+                        Bekijk Offerte
+                    </button>
+</div>
+</div>
+<!-- Card 3: Project Status -->
+<div class="bg-surface-container-lowest border border-stone-medium rounded-xl p-4 flex flex-col gap-4 hover:border-amber-burnt transition-all group">
+<div class="flex justify-between items-start">
+<div class="flex flex-col gap-1">
+<h3 class="font-headline-md text-headline-md text-on-surface">Eiken Look Slaapkamers</h3>
+<p class="text-secondary font-body-sm text-body-sm">Klant: Mevr. Schouten</p>
+</div>
+<span class="bg-green-100 text-green-700 px-3 py-1 rounded-full font-label-md text-label-md border border-green-200">Project</span>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-stone-medium/20">
+<div class="flex flex-col">
+<span class="text-secondary font-label-md text-label-md">Waarde</span>
+<span class="font-headline-md text-headline-md text-on-surface">€ 6.120,50</span>
+</div>
+<button class="flex items-center gap-2 bg-stone-light text-on-surface-variant px-4 py-2 rounded-lg font-label-md text-label-md group-hover:bg-amber-burnt group-hover:text-white transition-all active:scale-95">
+<span class="material-symbols-outlined text-[18px]" data-icon="description">description</span>
+                        Bekijk Offerte
+                    </button>
+</div>
+</div>
+<!-- Card 4: Lead Status -->
+<div class="bg-surface-container-lowest border border-stone-medium rounded-xl p-4 flex flex-col gap-4 hover:border-amber-burnt transition-all group">
+<div class="flex justify-between items-start">
+<div class="flex flex-col gap-1">
+<h3 class="font-headline-md text-headline-md text-on-surface">Kantoorvloer Project X</h3>
+<p class="text-secondary font-body-sm text-body-sm">Klant: Van der Laan B.V.</p>
+</div>
+<span class="bg-amber-burnt/10 text-amber-burnt px-3 py-1 rounded-full font-label-md text-label-md border border-amber-burnt/20">Lead</span>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-stone-medium/20">
+<div class="flex flex-col">
+<span class="text-secondary font-label-md text-label-md">Waarde</span>
+<span class="font-headline-md text-headline-md text-on-surface">€ 15.400,00</span>
+</div>
+<button class="flex items-center gap-2 bg-stone-light text-on-surface-variant px-4 py-2 rounded-lg font-label-md text-label-md group-hover:bg-amber-burnt group-hover:text-white transition-all active:scale-95">
+<span class="material-symbols-outlined text-[18px]" data-icon="description">description</span>
+                        Bekijk Offerte
+                    </button>
+</div>
+</div>
+<!-- Empty State Illustration Placeholder (Asymmetric/Modern style) -->
+<div class="mt-8 relative overflow-hidden bg-stone-light rounded-2xl p-8 flex flex-col items-center justify-center text-center gap-4">
+<div class="w-16 h-16 bg-amber-burnt/10 rounded-2xl flex items-center justify-center rotate-3">
+<span class="material-symbols-outlined text-amber-burnt text-4xl" data-icon="rocket_launch">rocket_launch</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-on-surface">Klaar voor meer?</h4>
+<p class="text-secondary font-body-sm text-body-sm max-w-[200px] mx-auto mt-1">Voeg nieuwe verkoopkansen toe om je pijplijn te vullen.</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Navigation Bar (Mobile View) -->
+<nav class="fixed bottom-0 left-0 right-0 bg-surface border-t border-stone-medium md:hidden z-50">
+<div class="flex justify-around items-center py-3">
+<a class="flex flex-col items-center gap-1 text-on-secondary-container" href="/dashboard/">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-label-md font-label-md">Dashboard</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-secondary-container" href="/relaties/">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+<span class="text-label-md font-label-md">Relaties</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-amber-burnt font-bold" href="#">
+<span class="material-symbols-outlined" data-icon="trending_up" style="font-variation-settings: 'FILL' 1;">trending_up</span>
+<span class="text-label-md font-label-md">Kansen</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-secondary-container" href="/projecten/">
+<span class="material-symbols-outlined" data-icon="architecture">architecture</span>
+<span class="text-label-md font-label-md">Projecten</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-secondary-container" href="#">
+<span class="material-symbols-outlined" data-icon="checklist">checklist</span>
+<span class="text-label-md font-label-md">Taken</span>
+</a>
+</div>
+</nav>
+<!-- FAB for Quick Action -->
+<button class="fixed bottom-24 right-6 w-14 h-14 bg-amber-burnt text-white rounded-full shadow-lg flex items-center justify-center z-50 active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="add">add</span>
+</button>
+</body></html>

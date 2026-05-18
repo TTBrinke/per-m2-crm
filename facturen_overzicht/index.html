@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+
+<html class="light" lang="nl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fcf9f8;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "amber-vivid": "#FFAF2E",
+                        "tertiary": "#7f5200",
+                        "background": "#fcf9f8",
+                        "surface-container-highest": "#e4e2e1",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#2f1500",
+                        "surface-container-low": "#f6f3f2",
+                        "on-secondary-fixed": "#1e1b16",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "inverse-on-surface": "#f3f0ef",
+                        "on-primary-fixed-variant": "#6e3900",
+                        "surface-bright": "#fcf9f8",
+                        "tertiary-fixed-dim": "#ffb954",
+                        "on-tertiary-fixed-variant": "#633f00",
+                        "error-container": "#ffdad6",
+                        "surface-container": "#f0eded",
+                        "secondary": "#625e57",
+                        "on-primary": "#ffffff",
+                        "surface": "#fcf9f8",
+                        "on-primary-container": "#fffbff",
+                        "on-surface-variant": "#554336",
+                        "on-secondary-container": "#67625b",
+                        "on-secondary-fixed-variant": "#4a4640",
+                        "secondary-container": "#e6ded6",
+                        "slate-deep": "#242424",
+                        "outline": "#887364",
+                        "stone-medium": "#C8C1B9",
+                        "primary": "#8d4b00",
+                        "on-background": "#1b1c1c",
+                        "surface-variant": "#e4e2e1",
+                        "primary-fixed": "#ffdcc3",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed": "#291800",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "outline-variant": "#dbc2b0",
+                        "amber-burnt": "#D97706",
+                        "primary-container": "#b15f00",
+                        "secondary-fixed-dim": "#ccc5bd",
+                        "tertiary-fixed": "#ffddb4",
+                        "on-tertiary-container": "#fffbff",
+                        "on-surface": "#1b1c1c",
+                        "surface-dim": "#dcd9d9",
+                        "inverse-surface": "#303030"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "margin-desktop": "32px",
+                        "base": "8px",
+                        "margin-mobile": "16px",
+                        "container-max-width": "1440px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface">
+<!-- Navigation Drawer (Desktop) -->
+<aside class="fixed left-0 top-0 h-full z-50 flex flex-col py-8 bg-surface-container border-r border-stone-medium h-full w-72 hidden md:flex">
+<div class="px-6 mb-12">
+<h1 class="font-headline-md text-headline-md font-black text-amber-burnt">PVC Flow CRM</h1>
+</div>
+<nav class="flex-1 flex flex-col gap-1">
+<a class="flex items-center gap-4 px-6 py-3 text-on-secondary-container hover:bg-secondary-container transition-all" href="/dashboard/">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-3 text-on-secondary-container hover:bg-secondary-container transition-all" href="/relaties/">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+<span class="font-label-md text-label-md">Relaties</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-3 text-on-secondary-container hover:bg-secondary-container transition-all" href="/producten_catalogus/">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-label-md text-label-md">Producten</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-3 text-on-secondary-container hover:bg-secondary-container transition-all" href="/verkoopkansen/">
+<span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
+<span class="font-label-md text-label-md">Verkoopkansen</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-3 text-on-secondary-container hover:bg-secondary-container transition-all" href="/projecten/">
+<span class="material-symbols-outlined" data-icon="architecture">architecture</span>
+<span class="font-label-md text-label-md">Projecten</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-3 text-on-secondary-container hover:bg-secondary-container transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="checklist">checklist</span>
+<span class="font-label-md text-label-md">Takenlijst</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-3 text-amber-burnt font-bold border-r-4 border-amber-burnt bg-primary-fixed translate-x-1 duration-200" href="/facturen_overzicht/">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span class="font-label-md text-label-md">Facturen</span>
+</a>
+</nav>
+</aside>
+<!-- Main Content Area -->
+<main class="md:ml-72 min-h-screen pb-24 md:pb-8">
+<!-- Top App Bar -->
+<header class="sticky top-0 z-40 bg-surface border-b border-stone-medium">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max-width mx-auto">
+<div class="flex items-center gap-4">
+<button class="md:hidden p-2 hover:bg-surface-container rounded-full transition-colors active:scale-95 duration-100">
+<span class="material-symbols-outlined text-amber-burnt" data-icon="menu">menu</span>
+</button>
+<h2 class="text-headline-md font-headline-md font-bold text-on-surface">Facturen</h2>
+</div>
+<button class="bg-amber-burnt text-white px-6 py-2 rounded-xl font-label-md text-label-md hover:bg-[#B45309] transition-colors active:scale-95 duration-100 flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                    Quick Add
+                </button>
+</div>
+</header>
+<section class="max-w-container-max-width mx-auto px-margin-mobile md:px-margin-desktop mt-8">
+<!-- Filters & Summary Bento -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-8">
+<!-- Main Filter Card -->
+<div class="md:col-span-8 bg-white border border-stone-medium rounded-xl p-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+<div class="flex flex-wrap items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Status:</span>
+<button class="px-4 py-2 rounded-full bg-amber-burnt text-white font-label-md text-label-md transition-colors">Alle</button>
+<button class="px-4 py-2 rounded-full border border-stone-medium text-on-surface-variant font-label-md text-label-md hover:bg-surface-container transition-colors">Betaald</button>
+<button class="px-4 py-2 rounded-full border border-stone-medium text-on-surface-variant font-label-md text-label-md hover:bg-surface-container transition-colors">Concept</button>
+<button class="px-4 py-2 rounded-full border border-stone-medium text-on-surface-variant font-label-md text-label-md hover:bg-surface-container transition-colors">Openstaand</button>
+</div>
+<div class="relative w-full md:w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant" data-icon="search">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-stone-light border border-stone-medium rounded-lg focus:ring-2 focus:ring-amber-burnt focus:border-amber-burnt outline-none font-body-sm text-body-sm" placeholder="Zoek factuurnr of klant..." type="text"/>
+</div>
+</div>
+<!-- Summary Stats Card -->
+<div class="md:col-span-4 bg-amber-vivid text-on-primary-fixed rounded-xl p-6 relative overflow-hidden flex flex-col justify-center">
+<div class="relative z-10">
+<p class="font-label-md text-label-md opacity-80 uppercase">Totaal Openstaand</p>
+<p class="font-display-lg text-display-lg mt-1">€ 12.450,00</p>
+</div>
+<span class="material-symbols-outlined absolute -right-4 -bottom-4 text-9xl opacity-10" data-icon="payments">payments</span>
+</div>
+</div>
+<!-- Invoices Table Container -->
+<div class="bg-white border border-stone-medium rounded-xl overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full border-collapse text-left">
+<thead>
+<tr class="bg-stone-light border-b border-stone-medium">
+<th class="px-6 py-4 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Factuurnummer</th>
+<th class="px-6 py-4 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Klantnaam</th>
+<th class="px-6 py-4 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Datum</th>
+<th class="px-6 py-4 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Status</th>
+<th class="px-6 py-4 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider text-right">Bedrag (incl. BTW)</th>
+<th class="px-6 py-4"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-stone-medium">
+<!-- Invoice Row 1 -->
+<tr class="hover:bg-surface-container transition-colors group">
+<td class="px-6 py-5 font-body-md text-body-md font-bold text-amber-burnt">FAC-2024-001</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center font-bold text-on-secondary-container text-xs">JB</div>
+<span class="font-body-md text-body-md">Jan de Bouwvakker B.V.</span>
+</div>
+</td>
+<td class="px-6 py-5 font-body-md text-body-md text-on-surface-variant">15 Jan 2024</td>
+<td class="px-6 py-5">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-green-100 text-green-700 font-label-md text-label-md border border-green-200">
+                                        Betaald
+                                    </span>
+</td>
+<td class="px-6 py-5 font-body-md text-body-md text-right font-bold">€ 2.450,00</td>
+<td class="px-6 py-5 text-right">
+<button class="p-2 hover:bg-surface-container-highest rounded-full transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Invoice Row 2 -->
+<tr class="bg-stone-light/30 hover:bg-surface-container transition-colors group">
+<td class="px-6 py-5 font-body-md text-body-md font-bold text-amber-burnt">FAC-2024-002</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center font-bold text-amber-burnt text-xs">PM</div>
+<span class="font-body-md text-body-md">Pietersen Montage</span>
+</div>
+</td>
+<td class="px-6 py-5 font-body-md text-body-md text-on-surface-variant">22 Jan 2024</td>
+<td class="px-6 py-5">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-stone-light text-on-surface-variant font-label-md text-label-md border border-stone-medium">
+                                        Concept
+                                    </span>
+</td>
+<td class="px-6 py-5 font-body-md text-body-md text-right font-bold">€ 890,50</td>
+<td class="px-6 py-5 text-right">
+<button class="p-2 hover:bg-surface-container-highest rounded-full transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Invoice Row 3 -->
+<tr class="hover:bg-surface-container transition-colors group">
+<td class="px-6 py-5 font-body-md text-body-md font-bold text-amber-burnt">FAC-2024-003</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center font-bold text-on-secondary-container text-xs">DK</div>
+<span class="font-body-md text-body-md">De Keizer Geveltechniek</span>
+</div>
+</td>
+<td class="px-6 py-5 font-body-md text-body-md text-on-surface-variant">02 Feb 2024</td>
+<td class="px-6 py-5">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-amber-vivid/20 text-amber-burnt font-label-md text-label-md border border-amber-vivid/30">
+                                        Openstaand
+                                    </span>
+</td>
+<td class="px-6 py-5 font-body-md text-body-md text-right font-bold">€ 15.200,00</td>
+<td class="px-6 py-5 text-right">
+<button class="p-2 hover:bg-surface-container-highest rounded-full transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Invoice Row 4 -->
+<tr class="bg-stone-light/30 hover:bg-surface-container transition-colors group">
+<td class="px-6 py-5 font-body-md text-body-md font-bold text-amber-burnt">FAC-2024-004</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center font-bold text-on-secondary-container text-xs">SV</div>
+<span class="font-body-md text-body-md">Smit Vastgoedbeheer</span>
+</div>
+</td>
+<td class="px-6 py-5 font-body-md text-body-md text-on-surface-variant">05 Feb 2024</td>
+<td class="px-6 py-5">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-green-100 text-green-700 font-label-md text-label-md border border-green-200">
+                                        Betaald
+                                    </span>
+</td>
+<td class="px-6 py-5 font-body-md text-body-md text-right font-bold">€ 5.670,00</td>
+<td class="px-6 py-5 text-right">
+<button class="p-2 hover:bg-surface-container-highest rounded-full transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Invoice Row 5 -->
+<tr class="hover:bg-surface-container transition-colors group">
+<td class="px-6 py-5 font-body-md text-body-md font-bold text-amber-burnt">FAC-2023-156</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center font-bold text-on-secondary-container text-xs">LL</div>
+<span class="font-body-md text-body-md">Langeveld Logistics</span>
+</div>
+</td>
+<td class="px-6 py-5 font-body-md text-body-md text-on-surface-variant">28 Dec 2023</td>
+<td class="px-6 py-5">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-green-100 text-green-700 font-label-md text-label-md border border-green-200">
+                                        Betaald
+                                    </span>
+</td>
+<td class="px-6 py-5 font-body-md text-body-md text-right font-bold">€ 1.250,00</td>
+<td class="px-6 py-5 text-right">
+<button class="p-2 hover:bg-surface-container-highest rounded-full transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination / Footer -->
+<div class="px-6 py-4 bg-stone-light border-t border-stone-medium flex flex-col md:flex-row items-center justify-between gap-4">
+<p class="font-body-sm text-body-sm text-on-surface-variant">Toont 1 - 5 van 48 facturen</p>
+<div class="flex items-center gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-stone-medium bg-white text-on-surface-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-amber-burnt text-white font-label-md text-label-md">1</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-stone-medium bg-white text-on-surface-variant hover:bg-surface-container transition-colors font-label-md text-label-md">2</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-stone-medium bg-white text-on-surface-variant hover:bg-surface-container transition-colors font-label-md text-label-md">3</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-stone-medium bg-white text-on-surface-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-surface border-t-0 shadow-[0_-4px_20px_rgba(36,36,36,0.05)] flex justify-around items-center py-2 z-50">
+<a class="flex flex-col items-center gap-1 px-4 py-2 text-on-surface-variant transition-colors" href="/dashboard/">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-[10px] font-semibold uppercase tracking-tighter">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 px-4 py-2 text-on-surface-variant transition-colors" href="/relaties/">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+<span class="text-[10px] font-semibold uppercase tracking-tighter">Relaties</span>
+</a>
+<a class="flex flex-col items-center gap-1 px-4 py-2 text-on-surface-variant transition-colors" href="/projecten/">
+<span class="material-symbols-outlined" data-icon="architecture">architecture</span>
+<span class="text-[10px] font-semibold uppercase tracking-tighter">Projecten</span>
+</a>
+<a class="flex flex-col items-center gap-1 px-4 py-2 text-amber-burnt transition-colors" href="/facturen_overzicht/">
+<span class="material-symbols-outlined" data-icon="receipt_long" style="font-variation-settings: 'FILL' 1;">receipt_long</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Facturen</span>
+</a>
+</nav>
+</body></html>

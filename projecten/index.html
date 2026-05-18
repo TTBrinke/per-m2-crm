@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+
+<html lang="nl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        /* Custom scrollbar for horizontal planner */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#e4e2e1",
+                        "secondary": "#625e57",
+                        "tertiary": "#7f5200",
+                        "outline": "#887364",
+                        "primary-fixed": "#ffdcc3",
+                        "primary": "#8d4b00",
+                        "amber-burnt": "#D97706",
+                        "secondary-container": "#e6ded6",
+                        "on-secondary": "#ffffff",
+                        "surface-container-low": "#f6f3f2",
+                        "surface": "#fcf9f8",
+                        "secondary-fixed-dim": "#ccc5bd",
+                        "tertiary-fixed": "#ffddb4",
+                        "surface-container-lowest": "#ffffff",
+                        "stone-medium": "#C8C1B9",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed": "#1e1b16",
+                        "amber-vivid": "#FFAF2E",
+                        "surface-tint": "#904d00",
+                        "error-container": "#ffdad6",
+                        "on-tertiary": "#ffffff",
+                        "stone-light": "#F5F4F2",
+                        "surface-container": "#f0eded",
+                        "error": "#ba1a1a",
+                        "on-tertiary-container": "#fffbff",
+                        "on-surface-variant": "#554336",
+                        "surface-container-highest": "#e4e2e1",
+                        "tertiary-fixed-dim": "#ffb954",
+                        "surface-container-high": "#eae7e7",
+                        "on-primary-fixed-variant": "#6e3900",
+                        "primary-fixed-dim": "#ffb77d",
+                        "on-surface": "#1b1c1c",
+                        "outline-variant": "#dbc2b0",
+                        "secondary-fixed": "#e9e1d9",
+                        "slate-deep": "#242424",
+                        "on-primary-container": "#fffbff",
+                        "on-secondary-container": "#67625b",
+                        "on-primary-fixed": "#2f1500",
+                        "background": "#fcf9f8",
+                        "surface-dim": "#dcd9d9",
+                        "on-tertiary-fixed": "#291800",
+                        "tertiary-container": "#a06900",
+                        "primary-container": "#b15f00",
+                        "inverse-primary": "#ffb77d",
+                        "surface-bright": "#fcf9f8",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed-variant": "#4a4640",
+                        "inverse-on-surface": "#f3f0ef",
+                        "on-background": "#1b1c1c",
+                        "inverse-surface": "#303030",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed-variant": "#633f00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "32px",
+                        "gutter": "24px",
+                        "container-max-width": "1440px",
+                        "margin-mobile": "16px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-slate-deep border-b border-stone-medium dark:border-outline docked full-width top-0 z-40 sticky">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max-width mx-auto">
+<div class="flex items-center gap-4">
+<button class="text-amber-burnt dark:text-amber-vivid hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors p-2 rounded-full active:scale-95 duration-100">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="text-headline-md font-headline-md font-bold text-on-surface dark:text-inverse-on-surface">Projecten</h1>
+</div>
+<button class="bg-amber-burnt text-on-primary font-label-md text-label-md px-4 py-2 rounded-full hover:bg-amber-burnt/90 active:scale-95 duration-100 shadow-sm">
+                Quick Add
+            </button>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-grow pb-24">
+<!-- View Toggle Section -->
+<section class="px-margin-mobile pt-6 pb-4">
+<div class="bg-stone-light p-1 rounded-xl flex items-center w-full max-w-sm">
+<button class="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg bg-surface text-amber-burnt shadow-sm font-label-md text-label-md transition-all">
+<span class="material-symbols-outlined text-[18px]" data-icon="view_list">view_list</span>
+                    List view
+                </button>
+<button class="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg text-secondary font-label-md text-label-md hover:bg-surface-container/50 transition-all">
+<span class="material-symbols-outlined text-[18px]" data-icon="calendar_view_week">calendar_view_week</span>
+                    Week-planner
+                </button>
+</div>
+</section>
+<!-- Search & Filter Bar (Mini) -->
+<section class="px-margin-mobile mb-6">
+<div class="flex gap-2">
+<div class="flex-grow relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-secondary text-[20px]" data-icon="search">search</span>
+<input class="w-full bg-surface border border-stone-medium rounded-xl pl-10 py-3 text-body-md focus:ring-2 focus:ring-amber-burnt focus:border-amber-burnt outline-none transition-all" placeholder="Zoek project..." type="text"/>
+</div>
+<button class="bg-surface border border-stone-medium p-3 rounded-xl text-secondary hover:bg-stone-light transition-colors">
+<span class="material-symbols-outlined" data-icon="tune">tune</span>
+</button>
+</div>
+</section>
+<!-- Project List (Bento-lite Style) -->
+<section class="px-margin-mobile flex flex-col gap-4">
+<!-- Project Card 1: In Uitvoering -->
+<article class="bg-surface border border-stone-medium rounded-xl p-4 hover:border-amber-burnt transition-all group">
+<div class="flex justify-between items-start mb-4">
+<div class="flex flex-col">
+<span class="text-label-md font-label-md text-secondary uppercase tracking-wider mb-1">PRJ-2401</span>
+<h2 class="text-headline-md font-headline-md text-on-surface">Renovatie Herengracht 42</h2>
+</div>
+<span class="bg-amber-burnt/10 text-amber-burnt px-3 py-1 rounded-full text-label-md font-label-md">In Uitvoering</span>
+</div>
+<!-- Progress Section -->
+<div class="mb-6">
+<div class="flex justify-between items-end mb-2">
+<span class="text-body-sm font-label-md text-secondary">Voortgang</span>
+<span class="text-body-md font-bold text-on-surface">65%</span>
+</div>
+<div class="w-full bg-stone-light h-2 rounded-full overflow-hidden">
+<div class="bg-amber-burnt h-full rounded-full" style="width: 65%"></div>
+</div>
+</div>
+<!-- Footer / Assigned Team -->
+<div class="flex items-center justify-between border-t border-stone-medium pt-4 mt-2">
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full border-2 border-surface bg-stone-medium overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Close up portrait of a professional Dutch construction manager wearing a white hard hat, sharp focused studio lighting with a neutral stone grey background, corporate headshot style, high clarity and professional demeanor." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4IsJ2gUjYh0tWgzcmiHWfFl45rQBmp83pdeXm17ULVyAgcFGG_cPLFa3-JaA-3pghq164U2vIAe9-wyl_Cwy_bJ5ME0LlHtsk9Bktcwy7rKYMn6BcsHypfHmsl5QKKSA1C9bVSqdCFJYuniZkw_IZVQaxthJ3xNqXPVkGptkJIMzc0qfKNVuWj-ynihmDm5QUF4bLyCVvhwmDlPQD7UHkCNtQX5JopL-s7G7V3ASLWI4nDbjyIK1f6E5oo20zY2dpbB_l-zDlKIk"/>
+</div>
+<div class="w-8 h-8 rounded-full border-2 border-surface bg-stone-medium overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of a male specialized technician for real estate projects, wearing a professional navy blue polo shirt, natural soft outdoor lighting in an urban architectural setting, modern corporate aesthetic with warm tones and clear details." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCW_hl1wM2Nc-Ta4QTg5ZM7szZ1NB_x5_6IPsqHlip_rULBRiDdntvf7Rmfm8u1fYH3MkNTM3Nq7dqHDhzVc7QlR-T3hcZIadlWFyrIruvZA_v6j-Qy5IQBRIfN_08z_w6jC385cNGcRt1w5HAJQBUElHfTxHnkOvB8XzTNkztSko8SvTKu-Gc4tI5RqUUwCl11I_k06nWrtmojBlU7rhCH0HiAaRYaYlWm9I2gyusIEmf9DAqq9hybQgEZRcKRYEyzAC4MMvR8GtE"/>
+</div>
+<div class="w-8 h-8 rounded-full border-2 border-surface bg-stone-light flex items-center justify-center text-[10px] font-bold text-secondary">
+                            +3
+                        </div>
+</div>
+<div class="flex items-center gap-2 text-secondary">
+<span class="material-symbols-outlined text-[18px]" data-icon="event">event</span>
+<span class="text-body-sm font-label-md">15 Okt - 12 Dec</span>
+</div>
+</div>
+</article>
+<!-- Project Card 2: Planning -->
+<article class="bg-surface border border-stone-medium rounded-xl p-4 hover:border-amber-burnt transition-all group">
+<div class="flex justify-between items-start mb-4">
+<div class="flex flex-col">
+<span class="text-label-md font-label-md text-secondary uppercase tracking-wider mb-1">PRJ-2408</span>
+<h2 class="text-headline-md font-headline-md text-on-surface">Dakopbouw Amstelveen</h2>
+</div>
+<span class="bg-secondary-container text-secondary px-3 py-1 rounded-full text-label-md font-label-md">Planning</span>
+</div>
+<!-- Progress Section -->
+<div class="mb-6">
+<div class="flex justify-between items-end mb-2">
+<span class="text-body-sm font-label-md text-secondary">Voortgang</span>
+<span class="text-body-md font-bold text-on-surface">12%</span>
+</div>
+<div class="w-full bg-stone-light h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 12%"></div>
+</div>
+</div>
+<!-- Assigned Contractor -->
+<div class="bg-stone-light/50 rounded-xl p-3 flex items-center gap-3 mb-4">
+<div class="w-10 h-10 bg-amber-burnt/20 rounded-lg flex items-center justify-center text-amber-burnt">
+<span class="material-symbols-outlined" data-icon="foundation">foundation</span>
+</div>
+<div>
+<p class="text-body-sm font-label-md text-secondary">Hoofdaannemer</p>
+<p class="text-body-md font-bold text-on-surface">Van Dam Bouw B.V.</p>
+</div>
+</div>
+<!-- Footer -->
+<div class="flex items-center justify-between border-t border-stone-medium pt-4">
+<div class="flex items-center gap-2 text-amber-burnt">
+<span class="material-symbols-outlined text-[18px]" data-icon="priority_high">priority_high</span>
+<span class="text-body-sm font-label-md">Vergunning vereist</span>
+</div>
+<div class="flex items-center gap-2 text-secondary">
+<span class="material-symbols-outlined text-[18px]" data-icon="event">event</span>
+<span class="text-body-sm font-label-md">Start: 05 Nov</span>
+</div>
+</div>
+</article>
+<!-- Small Hero Card / Stat -->
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-slate-deep p-4 rounded-xl text-white">
+<div class="flex items-center justify-between mb-4">
+<span class="material-symbols-outlined text-amber-vivid" data-icon="task_alt">task_alt</span>
+<span class="text-label-md text-stone-medium">Weekly</span>
+</div>
+<p class="text-display-lg font-display-lg leading-none mb-1">14</p>
+<p class="text-body-sm text-stone-medium">Taken voltooid</p>
+</div>
+<div class="bg-surface border border-stone-medium p-4 rounded-xl">
+<div class="flex items-center justify-between mb-4">
+<span class="material-symbols-outlined text-amber-burnt" data-icon="trending_up">trending_up</span>
+<span class="text-label-md text-secondary">ROI</span>
+</div>
+<p class="text-headline-lg font-headline-lg text-on-surface">€84k</p>
+<p class="text-body-sm text-secondary">Gefactureerd</p>
+</div>
+</div>
+<!-- Project Card 3: In Uitvoering -->
+<article class="bg-surface border border-stone-medium rounded-xl p-4 hover:border-amber-burnt transition-all group">
+<div class="flex justify-between items-start mb-4">
+<div class="flex flex-col">
+<span class="text-label-md font-label-md text-secondary uppercase tracking-wider mb-1">PRJ-2412</span>
+<h2 class="text-headline-md font-headline-md text-on-surface">Nieuwbouw Kavel 12</h2>
+</div>
+<span class="bg-amber-burnt/10 text-amber-burnt px-3 py-1 rounded-full text-label-md font-label-md">In Uitvoering</span>
+</div>
+<div class="mb-6">
+<div class="flex justify-between items-end mb-2">
+<span class="text-body-sm font-label-md text-secondary">Voortgang</span>
+<span class="text-body-md font-bold text-on-surface">38%</span>
+</div>
+<div class="w-full bg-stone-light h-2 rounded-full overflow-hidden">
+<div class="bg-amber-burnt h-full rounded-full" style="width: 38%"></div>
+</div>
+</div>
+<div class="flex items-center justify-between border-t border-stone-medium pt-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]" data-icon="location_on">location_on</span>
+<span class="text-body-sm font-label-md text-secondary">Utrecht</span>
+</div>
+<button class="text-amber-burnt font-label-md text-label-md flex items-center gap-1">
+                        Details <span class="material-symbols-outlined text-[16px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</article>
+</section>
+</main>
+<!-- Bottom Navigation Bar (Responsive Pivot) -->
+<!-- On MOBILE (md:hidden), we use this bottom bar per rules -->
+<nav class="fixed bottom-0 left-0 right-0 bg-surface dark:bg-slate-deep border-t border-stone-medium dark:border-outline md:hidden z-50">
+<div class="flex justify-around items-center py-3">
+<button class="flex flex-col items-center gap-1 text-on-secondary-container dark:text-surface-variant group">
+<span class="material-symbols-outlined group-active:scale-95 duration-100" data-icon="dashboard">dashboard</span>
+<span class="text-[10px] font-label-md">Dashboard</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-secondary-container dark:text-surface-variant group">
+<span class="material-symbols-outlined group-active:scale-95 duration-100" data-icon="groups">groups</span>
+<span class="text-[10px] font-label-md">Relaties</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-amber-burnt dark:text-amber-vivid font-bold group">
+<span class="material-symbols-outlined group-active:scale-95 duration-100" data-icon="architecture" style="font-variation-settings: 'FILL' 1;">architecture</span>
+<span class="text-[10px] font-label-md">Projecten</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-secondary-container dark:text-surface-variant group">
+<span class="material-symbols-outlined group-active:scale-95 duration-100" data-icon="checklist">checklist</span>
+<span class="text-[10px] font-label-md">Taken</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-secondary-container dark:text-surface-variant group">
+<span class="material-symbols-outlined group-active:scale-95 duration-100" data-icon="receipt_long">receipt_long</span>
+<span class="text-[10px] font-label-md">Facturen</span>
+</button>
+</div>
+</nav>
+<!-- NavigationDrawer (Hidden on mobile by default, but defined per JSON) -->
+<!-- Included here as hidden component to meet "Shared Components" mandate -->
+<aside class="hidden md:flex fixed left-0 top-0 h-full w-72 bg-surface-container dark:bg-slate-deep border-r border-stone-medium dark:border-outline z-50 flex-col py-8">
+<div class="px-6 mb-10">
+<span class="font-headline-md text-headline-md font-black text-amber-burnt dark:text-amber-vivid">PVC Flow CRM</span>
+</div>
+<nav class="flex-grow space-y-2 px-2">
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-on-secondary-container dark:text-surface-variant hover:bg-secondary-container dark:hover:bg-secondary-fixed-dim transition-all group" href="/dashboard/">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-on-secondary-container dark:text-surface-variant hover:bg-secondary-container dark:hover:bg-secondary-fixed-dim transition-all group" href="/relaties/">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+<span class="font-label-md text-label-md">Relaties</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-amber-burnt dark:text-amber-vivid border-r-4 border-amber-burnt bg-primary-fixed dark:bg-on-tertiary-fixed-variant transition-all translate-x-1 duration-200" href="/projecten/">
+<span class="material-symbols-outlined" data-icon="architecture" style="font-variation-settings: 'FILL' 1;">architecture</span>
+<span class="font-label-md text-label-md">Projecten</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-on-secondary-container dark:text-surface-variant hover:bg-secondary-container dark:hover:bg-secondary-fixed-dim transition-all group" href="#">
+<span class="material-symbols-outlined" data-icon="checklist">checklist</span>
+<span class="font-label-md text-label-md">Takenlijst</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-on-secondary-container dark:text-surface-variant hover:bg-secondary-container dark:hover:bg-secondary-fixed-dim transition-all group" href="/facturen_overzicht/">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span class="font-label-md text-label-md">Facturen</span>
+</a>
+</nav>
+</aside>
+</body></html>
