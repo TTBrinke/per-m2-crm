@@ -4,8 +4,8 @@
 // Vul hier jouw eigen gegevens in die je kunt vinden in je Supabase Dashboard:
 // Settings (tandwiel-icoon) -> API -> Project API keys
 
-const SUPABASE_URL = "JOUW_SUPABASE_URL_HIER"; // bijv. https://xyz.supabase.co
-const SUPABASE_ANON_KEY = "JOUW_SUPABASE_ANON_KEY_HIER"; // een hele lange sleutel die begint met eyJ...
+const SUPABASE_URL = "https://vbwukcdyszjfmnxizkht.supabase.co/rest/v1/"; // bijv. https://xyz.supabase.co
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZid3VrY2R5c3pqZm1ueGl6a2h0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkxMzAwNzgsImV4cCI6MjA5NDcwNjA3OH0.EVbVUVy0svwtSKM6BN-LzFnnxfcVqns17mv4K1z5fps"; // een hele lange sleutel die begint met eyJ...
 
 // Initialiseer de client alleen als de CDN succesvol is geladen
 let supabase = null;
