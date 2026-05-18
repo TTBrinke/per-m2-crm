@@ -114,7 +114,10 @@
       min-height: max(884px, 100dvh);
     }
   </style>
-  </head>
+  
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/supabase-config.js"></script>
+</head>
 <body class="bg-background text-on-background font-body-md text-body-md min-h-screen flex flex-col md:flex-row">
 <!-- Left Side: Visual/Branding (Desktop Only) -->
 <div class="hidden md:flex md:w-1/2 relative overflow-hidden bg-slate-deep">
@@ -217,4 +220,42 @@
 </footer>
 </div>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('form');
+    if (!form) return;
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+
+        if (!supabase) {
+            alert("Supabase is nog niet geconfigureerd. Pas 'supabase-config.js' in de hoofdmap aan met je echte API keys!");
+            return;
+        }
+
+        // Toon laden in de knop
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = "Inloggen... <span class='material-symbols-outlined animate-spin'>sync</span>";
+        submitBtn.disabled = true;
+
+        const { data, error } = await supabase.auth.signInWithPassword({
+            email: email,
+            password: password
+        });
+
+        if (error) {
+            alert("Fout bij inloggen: " + error.message);
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+        } else {
+            // Succesvol ingelogd!
+            window.location.href = "/dashboard/";
+        }
+    });
+});
+</script>
 </body></html>

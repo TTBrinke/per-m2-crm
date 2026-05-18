@@ -119,7 +119,10 @@
       min-height: max(884px, 100dvh);
     }
   </style>
-  </head>
+  
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/supabase-config.js"></script>
+</head>
 <body class="bg-background text-on-surface font-body-md">
 <!-- TopAppBar -->
 <header class="bg-surface dark:bg-slate-deep border-b border-stone-medium dark:border-outline docked full-width top-0 sticky z-40">
@@ -350,4 +353,36 @@
 <button class="fixed bottom-20 right-6 lg:bottom-10 lg:right-10 bg-amber-burnt text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center active:scale-95 transition-all z-40">
 <span class="material-symbols-outlined text-2xl" data-icon="add">add</span>
 </button>
+
+<script>
+document.addEventListener('DOMContentLoaded', async () => {
+    if (!supabase) return;
+
+    // Check of er een actieve sessie is
+    const { data: { session } } = await supabase.auth.getSession();
+    
+    if (!session) {
+        console.log("Geen actieve sessie gevonden. Stuur door naar inlogpagina...");
+        window.location.href = "/inloggen/";
+    } else {
+        console.log("Ingelogd als:", session.user.email);
+        
+        // Optioneel: Toon de naam van de ingelogde gebruiker in de UI
+        const userEmailElements = document.querySelectorAll('.user-email-display');
+        userEmailElements.forEach(el => {
+            el.textContent = session.user.email;
+        });
+    }
+
+    // Uitloggen functionaliteit toevoegen aan eventuele logout knoppen
+    const logoutBtns = document.querySelectorAll('.logout-btn, a[href*="logout"]');
+    logoutBtns.forEach(btn => {
+        btn.addEventListener('click', async (e) => {
+            e.preventDefault();
+            await supabase.auth.signOut();
+            window.location.href = "/inloggen/";
+        });
+    });
+});
+</script>
 </body></html>

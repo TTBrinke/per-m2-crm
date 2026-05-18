@@ -133,7 +133,10 @@
       min-height: max(884px, 100dvh);
     }
   </style>
-  </head>
+  
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/supabase-config.js"></script>
+</head>
 <body class="bg-background text-on-background min-h-screen flex flex-col">
 <!-- TopAppBar -->
 <header class="bg-surface dark:bg-slate-deep border-b border-stone-medium dark:border-outline docked full-width top-0 z-40 sticky">
@@ -361,4 +364,36 @@
 </a>
 </nav>
 </aside>
+
+<script>
+document.addEventListener('DOMContentLoaded', async () => {
+    if (!supabase) return;
+
+    // Check of er een actieve sessie is
+    const { data: { session } } = await supabase.auth.getSession();
+    
+    if (!session) {
+        console.log("Geen actieve sessie gevonden. Stuur door naar inlogpagina...");
+        window.location.href = "/inloggen/";
+    } else {
+        console.log("Ingelogd als:", session.user.email);
+        
+        // Optioneel: Toon de naam van de ingelogde gebruiker in de UI
+        const userEmailElements = document.querySelectorAll('.user-email-display');
+        userEmailElements.forEach(el => {
+            el.textContent = session.user.email;
+        });
+    }
+
+    // Uitloggen functionaliteit toevoegen aan eventuele logout knoppen
+    const logoutBtns = document.querySelectorAll('.logout-btn, a[href*="logout"]');
+    logoutBtns.forEach(btn => {
+        btn.addEventListener('click', async (e) => {
+            e.preventDefault();
+            await supabase.auth.signOut();
+            window.location.href = "/inloggen/";
+        });
+    });
+});
+</script>
 </body></html>
